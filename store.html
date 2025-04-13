@@ -3,15 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <title>CRMBS Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #8B4513; color: white; padding: 20px; text-align: center; }
-    .section { padding: 20px; }
+    @font-face {
+    font-family: 'headerFont';
+    src: url('fonts/header.ttf') format('truetype');             
+	font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'bodyFont';
+    src: url('fonts/body.otf') format('opentype');             
+	font-weight: normal;
+    font-style: normal;
+  }
+    * {
+    margin: 0; 
+    padding: 0;
+  }
+  body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    height: 100%;
+    background-color: #FFFFFF;
+  }  
+    header {
+    position: fixed;
+    top: 0;
+    background-color: #fff4e6;
+    padding: 5px 0;
+    text-align: center;
+    z-index: 999;
+    width: 100%;
+    height: auto;
+    max-height: 10vh;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.01); 
+    backdrop-filter: blur(10px);          
+}
+  header h1 {
+    font-family: 'headerfont', sans-serif;
+    font-size: 2vw;
+    color: #B0183D;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
+    letter-spacing: 0.1px;
+  }
+  header p {
+    font-family: 'bodyfont', sans-serif;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+    font-size: 1vw;
+    color: #FF5E6E;
+    margin-top: -5px;
+  }
+    body::-webkit-scrollbar {
+    width: 5px;
+  }
+  body::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: #E23664;  
+    border-radius: 100px;
+  }
+    .section { padding: 20px; margin-top: 5vh}
+    .section h2{ font-family: 'headerfont', sans-serif; color: #B0183D; font-size: 2.5em;}
+    .section h3{ font-family: 'headerfont', sans-serif}
+    .section p{ font-family: 'bodyfont', sans-serif}
     .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .product { border: 1px solid #ccc; padding: 10px; width: 200px; text-align: center; }
-    img { max-width: 100%; }
-    .buy-btn { background: #DAA520; color: white; padding: 5px 10px; border: none; cursor: pointer; }
+    .product { border-radius: 15px;  padding: 10px; width: 200px; text-align: center; }
+    .product:hover { transform: scale(1.05); cursor: pointer; transition: 0.3s ease;}
+    img { max-width: 100%; filter: drop-shadow(0px 5px 3px rgba(52, 52, 52, 0.7));}
+    .buy-btn { border-radius: 10px; border: 3px solid white; background: transparent; color: white; padding: 5px 10px; cursor: pointer; font-family: 'bodyfont',sans-serif}
+    .buy-btn:hover { background: rgba(255, 255, 255, 0.3); }
+    .buy-btn-red { border-radius: 10px; border: 3px solid #B0183D; background: transparent; color: #B0183D; padding: 5px 10px; cursor: pointer; font-family: 'bodyfont',sans-serif}
+    .buy-btn-red:hover { background: rgba(176, 24, 61, 0.3); }
     .back-link { display: block; margin: 20px auto; text-align: center; }
+  .back-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .back-link a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B0183D;
+    color: white;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+  }
+
+  .back-link a:hover {
+    transform: scale(1.05);
+    background-color: rgba(176, 24, 61, 0.8);
+  }
   </style>
 </head>
 <body>
@@ -26,40 +120,76 @@
   <section class="section">
     <h2>Buy Your Favorite Cookies</h2>
     <div class="grid">
-      <div class="product">
-        <img src="choco-chip.jpg" alt="Choco Chip">
-        <h3>Choco Chip</h3>
+      <div class="product" style="background-color: #b87431; color: white">
+        <img src="images/biscoffLava.png" alt="Biscoff Lava">
+        <h3>Biscoff Lava</h3>
         <p>₱150</p>
         <button class="buy-btn">Buy Now</button>
       </div>
-      <div class="product">
-        <img src="oatmeal.jpg" alt="Oatmeal">
-        <h3>Oatmeal</h3>
+      <div class="product" style= "background-color: #f1d7af; color: white">
+        <img src="images/butterCake.png" alt="Butter Cake ">
+        <h3>Butter Cake</h3>
         <p>₱130</p>
         <button class="buy-btn">Buy Now</button>
       </div>
-      <div class="product">
-        <img src="double-choco.jpg" alt="Double Chocolate">
-        <h3>Double Choco</h3>
+      <div class="product" style= "background-color: #d5ac72; color: white">
+        <img src="images/cakeBatter.png" alt="Cake Butter">
+        <h3>Cake Butter</h3>
         <p>₱160</p>
         <button class="buy-btn">Buy Now</button>
       </div>
-      <div class="product">
-        <img src="matcha.jpg" alt="Matcha">
-        <h3>Matcha</h3>
+      <div class="product" style="background-color: #fda1a2; color: white">
+        <img src="images/chocoBerry.png" alt="Choco Berry">
+        <h3>Choco Berry</h3>
         <p>₱140</p>
         <button class="buy-btn">Buy Now</button>
       </div>
-      <div class="product">
-        <img src="peanut-butter.jpg" alt="Peanut Butter">
-        <h3>Peanut Butter</h3>
+      <div class="product" style="background-color: #764d43; color: white">
+        <img src="images/chocolateCupcake.png" alt="Chocolate Cupcake">
+        <h3>Chocolate Cupcake</h3>
         <p>₱135</p>
         <button class="buy-btn">Buy Now</button>
       </div>
-      <div class="product">
-        <img src="red-velvet.jpg" alt="Red Velvet">
-        <h3>Red Velvet</h3>
+      <div class="product" style= "background-color: #4b3a31; color: white">
+        <img src="images/cookiesCream.png" alt="Cookies & Cream">
+        <h3>Cookies & Cream</h3>
         <p>₱170</p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      <div class="product" style="background-color: #fcf0e3; color: #B0183D">
+        <img src="images/nillaBean.png" alt="Nilla Bean">
+        <h3>Nilla Bean</h3>
+        <p>₱140</p>
+        <button class="buy-btn-red" >Buy Now</button>
+      </div>
+      <div class="product" style="background-color: #f6d2d1; color: #B0183D">
+        <img src="images/raspberryCheesecake.png" alt="Raspberry Cheesecake">
+        <h3>Raspberry Cake</h3>
+        <p>₱170</p>
+        <button class="buy-btn-red" >Buy Now</button>
+      </div>
+      <div class="product" style="background-color: #d68226; color: white">
+        <img src="images/saltedCaramel.png" alt="Salted Caramel">
+        <h3>Salted Caramel</h3>
+        <p>₱100</p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      <div class="product" style="background-color: #e8b772; color: white">
+        <img src="images/smores.png" alt="Smore's">
+        <h3>Smore's</h3>
+        <p>₱150</p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      <div class="product" style="background-color: #90421d; color: white">
+        <img src="images/stickyBun.png" alt="Sticky Bun">
+        <h3>Sticky Bun</h3>
+        <p>₱120</p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+      <div class="product" style="background-color: #aa7e5b;  color: white">
+        <img src="images/hazelnutPopcorn.png" alt="Hazelnut Popcorn">
+        <h3>Hazelnut Popcorn</h3>
+        <p>₱220</p>
         <button class="buy-btn">Buy Now</button>
       </div>
     </div>
@@ -67,8 +197,8 @@
 
   <!-- 3. Navigation/Back Button -->
   <div class="back-link">
-    <a href="index.html">← Back to Home</a>
-  </div>
+  <a href="index.html"><i class="fas fa-home"></i></a>
+</div>
 
   <!-- 4. Footer -->
   <footer>
