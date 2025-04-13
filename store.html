@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>CRMBS Store</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
     @font-face {
     font-family: 'headerFont';
     src: url('fonts/header.ttf') format('truetype');             
@@ -27,6 +28,7 @@
     padding: 0; 
     height: 100%;
     background-color: #FFFFFF;
+    overflow: hidden
   }  
     header {
     position: fixed;
@@ -57,6 +59,55 @@
     color: #FF5E6E;
     margin-top: -5px;
   }
+      .footer-content {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 3vw;
+  }
+    
+  footer {
+  position: relative;
+  bottom: 0; 
+  background-color: #fff4e6;
+  padding: 7px 0;
+  text-align: left;
+  z-index: 999;
+  width: 100%;
+  height: auto;
+  max-height: 15vh;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
+}
+
+  footer p {
+    font-family: 'bodyfont', sans-serif;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+    font-size: 3vw;
+    color: #FF5E6E;
+    margin-top: -2px;
+  }
+    
+  .social-icons {
+    display: flex;
+    margin-top: 1px;
+    align-items: center;
+  }
+
+ .social-icons a {
+  margin: 0 8px;
+  color:  #FF5E6E;
+  font-size: 3vw;
+  text-decoration: none;
+  transition: color 0.3s ease;
+ }
+
+.social-icons a:hover {
+  color:  #B0183D;
+  transform: scale(1.5px);
+}
+
     body::-webkit-scrollbar {
     width: 5px;
   }
@@ -133,8 +184,8 @@
         <button class="buy-btn">Buy Now</button>
       </div>
       <div class="product" style= "background-color: #d5ac72; color: white">
-        <img src="images/cakeBatter.png" alt="Cake Butter">
-        <h3>Cake Butter</h3>
+        <img src="images/cakeBatter.png" alt="Cake Batter">
+        <h3>Cake Batter</h3>
         <p>₱160</p>
         <button class="buy-btn">Buy Now</button>
       </div>
@@ -202,8 +253,18 @@
 
   <!-- 4. Footer -->
   <footer>
-    <p>&copy; 2025 John Doe</p>
-  </footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Crmbs.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
