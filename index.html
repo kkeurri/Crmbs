@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CRMBS</title>
   <link rel= "icon" href= "images/ic_coockie.png" type= "image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
   @font-face {
     font-family: 'headerFont';
@@ -97,7 +98,56 @@
     color: #FF5E6E;
     margin-top: -5px;
   }
+  .footer-content {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 3vw;
+  }
     
+  footer {
+  position: relative;
+  bottom: 0; 
+  background-color: #fff4e6;
+  padding: 7px 0;
+  text-align: left;
+  z-index: 999;
+  width: 100%;
+  height: auto;
+  max-height: 15vh;
+
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); 
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10px);
+}
+
+  footer p {
+    font-family: 'bodyfont', sans-serif;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.3);
+    font-size: 3vw;
+    color: #FF5E6E;
+    margin-top: -2px;
+  }
+    
+  .social-icons {
+    display: flex;
+    margin-top: 1px;
+    align-items: center;
+  }
+
+ .social-icons a {
+  margin: 0 8px;
+  color:  #FF5E6E;
+  font-size: 3vw;
+  text-decoration: none;
+  transition: color 0.3s ease;
+ }
+
+.social-icons a:hover {
+  color:  #B0183D;
+  transform: scale(1.5px);
+}
+
   /* OVERVIEW */
   .overview {
     position: relative;
@@ -292,10 +342,17 @@
   .product-grid-section {
       
   }
+  .product-grid-section h2{
+      font-family: 'headerfont', sans-serif;
+      padding-left: 3.5vw;
+    color: #B0183D;
+    font-size: 2em
+    
+  }
   .bg-wrapper {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 600px;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -304,7 +361,8 @@
     position: absolute; 
     top: 0;
     left: 0;
-    height: 100%;
+    height: 600px;
+    max-height: 600px;
     width: 100%;
     opacity: 0.2;
     z-index: 1;
@@ -314,7 +372,7 @@
     z-index: 2;
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 600px;
     background: linear-gradient(
     to bottom, 
     rgba(252, 237, 216, 0.9), 
@@ -325,59 +383,66 @@
   );
   }
   .columns {
-	display: flex;
-	gap: 20px;
-	width: 100%;
- 	max-width: 55vw; 
-  }
- 
-  .column {
-	padding: 15px;
-  }
- 
-  .left {
-	background-color: transparent;
-    flex: 1;
-  }
- 
-  .right {
-	background-color: transparent;
-    flex: 1;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    align-items: center;
-    height: 100%;
-    width: 100vw;
-    justify-content: center;
-    gap: 0px;
-  }
-  .grid-container { 
-    display: flex; 
-    justify-content: center;
-    align-items: center; 
-    width: 100vw; 
-    height: 100%; 
-  }
-  .cell {
-    background-color: antiquewhite;
-    text-align: center;
-    font-size: 20vw;
-    color: white;
-    align-content: center;
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-    font-family: 'headerfont', sans-serif;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-  } 
-    .grid-img {
-      height: 90%;
-      width: 90%;
-      
-  }
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.column {
+  /* optional shared column styles */
+}
+
+.left {
+  background-color: transparent;
+  width: 800px;           
+  flex-shrink: 0;         
+  display: flex;
+  align-items: flex-start;
+  
+  height: 100vh;
+}
+
+.crmbs-img {
+  height: 500px;         
+  width: auto;
+  object-fit: contain;
+}
+
+.right {
+  background-color: transparent;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start; 
+  padding-left: 0;           
+  padding-right: 10vw;
+}
+ /* PRODUCTS GRID */
+    .product { border-radius: 15px;  padding: 10px; width: 200px; text-align: center; }
+    .product:hover { transform: scale(1.05); cursor: pointer; transition: 0.3s ease;}
+    img { max-width: 100%; filter: drop-shadow(0px 5px 3px rgba(52, 52, 52, 0.7));}
+    .section {
+    background-color: #FCEDD8;
+    padding-bottom: 5vh
+    }
+    
+    .section h2{
+    background-color: #FCEDD8;
+      font-family: 'headerfont', sans-serif;
+      padding-left: 3.5vw;
+      font-size: 2em;
+      color: #B0183D
+    }
+    .section p{
+      font-family: 'bodyfont', sans-serif;
+      font-size: 1em;
+    }
+    .p{
+      font-family: 'bodyfont', sans-serif;
+      font-size: 0.8em;
+    }
   </style>
 </head>
   
@@ -449,29 +514,14 @@
       <h2> Soon to CRUMB!</h2>
       <div class="columns">
         <div class="column left">
-          <div class="grid-container">
-            <div class="grid">
-              <div class="cell">C</div>
-              <div class="cell"><img src="images/a.png" class="grid-img"/></div>
-              <div class="cell"><img src="images/b.png" class="grid-img"/></div>
-              <div class="cell"><img src="images/c.png" class="grid-img"/></div>
-              <div class="cell"><img src="images/d.png" class="grid-img"/></div>
-              <div class="cell"><img src="images/e.png" class="grid-img"/></div>
-              <div class="cell"><img src="images/f.png" class="grid-img"/></div>
-              <div class="cell"><img src="images/g.png" class="grid-img"/></div>
-              <div class="cell">K</div>
-              <div class="cell">I</div>
-              <div class="cell">E</div>
-              <div class="cell">S</div>
-            </div>
-            </div>
+          <img class="crmbs-img" src="images/crmbs.png"/>
         </div>
         <div class="column right">
           <iframe 
             src="https://www.youtube.com/embed/EKAJ-bVGwTY" 
             title="YouTube Shorts Video"
             allowfullscreen
-                  style="aspect-ratio: 9 / 16;"
+                  style="aspect-ratio: 9 / 16; height: 60vh; justify-content: flex-start;"
            ></iframe>
         </div>
     </div>
@@ -479,15 +529,65 @@
     </div>
   </section>
 
-  <!-- 5. Gallery -->
-  <section class="section">
+  <!-- PRODUCTS AUQ NA -->
+  <section class="section" >
+    <h2>Buy Your Favorite Cookies</h2>
+    <div class="grid">
+      <div class="product" style="background-color: #b87431; color: white">
+        <img src="images/biscoffLava.png" alt="Biscoff Lava">
+        <h3>Biscoff Lava</h3>
+
+        <p class="p">Gooey Biscoff</p>
+      </div>
+      <div class="product" style= "background-color: #f1d7af; color: white">
+        <img src="images/butterCake.png" alt="Butter Cake ">
+        <h3>Butter Cake</h3>
+   
+        <p class="p">Buttery and soft</p>
+      </div>
+      <div class="product" style= "background-color: #d5ac72; color: white">
+        <img src="images/cakeBatter.png" alt="Cake Batter">
+        <h3>Cake Batter</h3>
+       
+        <p class="p">Sweet with cake crumbs</p>
+      </div>
+      <div class="product" style="background-color: #fda1a2; color: white">
+        <img src="images/chocoBerry.png" alt="Choco Berry">
+        <h3>Choco Berry</h3>
+   
+        <p class="p">Choco with a berry twist</p>
+      </div>
+      <div class="product" style="background-color: #764d43; color: white">
+        <img src="images/chocolateCupcake.png" alt="Chocolate Cupcake">
+        <h3>Chocolate Cupcake</h3>
+
+        <p class="p">Fudgy cupcake bite</p>
+      </div>
+      <div class="product" style= "background-color: #4b3a31; color: white">
+        <img src="images/cookiesCream.png" alt="Cookies & Cream">
+        <h3>Cookies & Cream</h3>
+  
+        <p class="p">Creamy cookie crunch</p>
+      </div>
+      
+    </div>
     
   </section>
 
   <!-- 8. Footer -->
   <footer>
-    <p>&copy; 2025 John Doe</p>
-  </footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Crmbs.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</footer>
   <script>
     const cookies = document.querySelectorAll('.cookie');
     const section = document.querySelector('.key-features-section');
